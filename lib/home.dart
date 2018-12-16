@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'category.dart';
-import 'source.dart';
+import 'my_scaffold.dart';
 
 class MyHomePage extends StatefulWidget {
-  static final routerName = '/MyHomePage';
+  static final routeName = '/MyHomePage';
   MyHomePage({Key key, this.title}) : super(key: key);
   final String title;
   @override
@@ -21,12 +20,13 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return MyScaffold(
+      context: context,
+      sourceCodePath: 'home.dart',
       appBar: AppBar(
         title: Text(widget.title),
+        actions: <Widget>[],
       ),
-      drawer: CategoryDrawer.getInstance(),
-      endDrawer: SourceDrawer.getInstance(),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
