@@ -6,8 +6,6 @@ void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
  
-
-  int _lastClickTime = 0;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -17,7 +15,6 @@ class MyApp extends StatelessWidget {
         ),
         home:  MyHomePage(title: 'Home'),
         routes: routeMap,
-      
     );
   }
 }
