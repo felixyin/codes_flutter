@@ -3,7 +3,6 @@ import '../my_scaffold.dart';
 import '../category.dart';
 
 class TestMaterialAppPage extends StatefulWidget {
-  static final routeName = '/TestMaterialAppPage';
   _TestMaterialAppPageState createState() => _TestMaterialAppPageState();
 }
 

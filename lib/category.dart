@@ -4,27 +4,27 @@ import '01Flutter之初印象/01hello_flutter.dart';
 import '01Flutter之初印象/test_material_app.dart';
 
 ///
-/// * 每新讲一课，新的菜单在这里配置：
+///  每新讲一课，新的菜单在这里配置：
 ///
 final List<CategoryModel> _cmList = <CategoryModel>[
   CategoryModel(
     'Home',
-    routeName: MyHomePage.routeName,
+    routeName: '/$MyHomePage',
     routeValue: (context) => MyHomePage(title: 'Home'),
   ),
   CategoryModel('章节1 Flutter之初印象', items: [
     CategoryModel(
-      'HelloFlutterPage',
-      routeName: HelloFlutterPage.routeName,
+      'Hello Flutter',
+      routeName: '/$HelloFlutterPage',
       routeValue: (context) => HelloFlutterPage(),
     ),
-    CategoryModel(
-      'TestMaterialAppPage(可返回)',
-      routeName: TestMaterialAppPage.routeName,
-      routeValue: (context) => TestMaterialAppPage(),
-      isAllowBack: true,
-    ),
   ]),
+  CategoryModel(
+    'TestMaterialAppPage(可返回)',
+    routeName: '/$TestMaterialAppPage',
+    routeValue: (context) => TestMaterialAppPage(),
+    isAllowBack: true,
+  ),
 ];
 
 Map<String, WidgetBuilder> convertCategoryModelToRouteEntry(List<CategoryModel> items) {
@@ -40,8 +40,8 @@ Map<String, WidgetBuilder> convertCategoryModelToRouteEntry(List<CategoryModel> 
   return _routeMap;
 }
 
-/// * 导出 routeMap给 MaterialApp.route 属性使用
-/// * 参考 [MyApp] 16行
+///  导出 routeMap给 MaterialApp.route 属性使用
+///  参考 [MyApp] 16行
 final routeMap = convertCategoryModelToRouteEntry(_cmList);
 
 class CategoryDrawer extends StatefulWidget {
@@ -96,9 +96,15 @@ class _CategoryDrawerState extends State<CategoryDrawer> {
 
   @override
   Widget build(BuildContext context) {
-    print('---------');
+    final children = <Widget>[
+      Container(
+        child: Text('目录'),
+      ),
+    ];
 
-    final about = ListTile(
+    // 将配置的菜单树对象转换为折叠菜单Widget
+    children.addAll(_cmList.map(convertCategoryModelToWidget).toList());
+    children.add(ListTile(
       title: Text('关于'),
       onTap: () {
         showAboutDialog(
@@ -113,16 +119,7 @@ class _CategoryDrawerState extends State<CategoryDrawer> {
           context: context,
         );
       },
-    );
-
-    final children = <Widget>[
-      Container(
-        child: Text('目录'),
-      ),
-    ];
-    // 将配置的菜单树对象转换为折叠菜单Widget
-    children.addAll(_cmList.map(convertCategoryModelToWidget).toList());
-    children.add(about);
+    ));
 
     return Drawer(
       child: Column(
@@ -132,8 +129,7 @@ class _CategoryDrawerState extends State<CategoryDrawer> {
   }
 }
 
-///
-/// * 菜单模型，代表一个菜单
+///  菜单模型，代表一个菜单
 class CategoryModel {
   CategoryModel(
     this.title, {

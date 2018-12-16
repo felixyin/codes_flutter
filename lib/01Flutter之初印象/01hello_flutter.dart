@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import '../my_scaffold.dart';
 
 class HelloFlutterPage extends StatefulWidget {
-  static final routeName = '/HelloFlutterPage';
   _HelloFlutterPageState createState() => _HelloFlutterPageState();
 }
 

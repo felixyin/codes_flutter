@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'my_scaffold.dart';
 
 class MyHomePage extends StatefulWidget {
-  static final routeName = '/MyHomePage';
   MyHomePage({Key key, this.title}) : super(key: key);
   final String title;
   @override
