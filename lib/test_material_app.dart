@@ -14,7 +14,7 @@ class _TestMaterialAppPageState extends State<TestMaterialAppPage> {
       routes: routeMap,
       home: MyScaffold(
         context: context,
-        sourceCodePath: '01Flutter%E4%B9%8B%E5%88%9D%E5%8D%B0%E8%B1%A1/test_material_app.dart',
+        sourceCodePath: 'test_material_app.dart',
         appBar: AppBar(
           title: Text('Test APP....'),
           actions: <Widget>[
