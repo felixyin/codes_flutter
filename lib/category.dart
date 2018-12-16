@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'home.dart';
 import '01Flutter之初印象/01hello_flutter.dart';
-import '01Flutter之初印象/test_material_app.dart';
+import 'test_material_app.dart';
 
 ///
 ///  每新讲一课，新的菜单在这里配置：

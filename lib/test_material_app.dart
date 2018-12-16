@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../my_scaffold.dart';
-import '../category.dart';
+import 'my_scaffold.dart';
+import 'category.dart';
 
 class TestMaterialAppPage extends StatefulWidget {
   _TestMaterialAppPageState createState() => _TestMaterialAppPageState();

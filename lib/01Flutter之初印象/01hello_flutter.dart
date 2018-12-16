@@ -10,7 +10,7 @@ class _HelloFlutterPageState extends State<HelloFlutterPage> {
   Widget build(BuildContext context) {
     return  MyScaffold(
       context: context,
-      sourceCodePath: '01Flutter%E4%B9%8B%E5%88%9D%E5%8D%B0%E8%B1%A1/01hello_flutter.dart',
+      sourceCodePath: '01Flutter之初印象/01hello_flutter.dart',
       appBar: AppBar(
         title: Text('HelloFlutter1'),
         actions: <Widget>[],
